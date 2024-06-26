@@ -1,0 +1,232 @@
+{
+  "intents": [
+    {
+      "tag": "saludo",
+      "patterns": [
+        "Hola",
+        "Buenos dias",
+        "Buenas tardes",
+        "Buenas noches",
+        "Que tal",
+        "Hey"
+      ],
+      "responses": [
+        "¡Hola! ¿En que puedo ayudarte hoy?",
+        "¡Hola! ¿Como puedo asistirte?",
+        "¡Hola! ¿Que necesitas saber?"
+      ]
+    },
+    {
+      "tag": "informacion_universidad",
+      "patterns": [
+        "Cuentame sobre la universidad",
+        "¿Que ofrece la universidad?",
+        "Informacion sobre la universidad",
+        "Hablame de la universidad"
+      ],
+      "responses": [
+        "Nuestra universidad ofrece una amplia variedad de programas academicos, instalaciones modernas y un ambiente inclusivo para todos los estudiantes. ¿Te gustaria saber mas sobre nuestros programas o instalaciones?"
+      ]
+    },
+    {
+      "tag": "horarios_clases",
+      "patterns": [
+        "¿Que dias son las clases?",
+        "Horarios de clases",
+        "¿Cuando empiezan las clases?",
+        "Horarios de las clases"
+      ],
+      "responses": [
+        "Las clases se imparten de lunes a viernes en varios horarios. Puedes consultar el horario especifico de tu programa en el portal del estudiante.",
+        "Las clases empiezan un 1 de Marzo segun la resolucion Vigente de la Universidad",
+        "Los horarios de clase puedes consultarlo en tu portal de divisist en la seccion de horario."
+      ]
+    },
+    {
+      "tag": "beca_trabajo",
+      "patterns": [
+        "Informacion sobre becas de trabajo",
+        "¿Hay becas de trabajo disponibles?",
+        "Becas de trabajo universitarias",
+        "¿Como puedo solicitar una beca de trabajo?"
+      ],
+      "responses": [
+        "Ofrecemos diversas becas de trabajo para estudiantes. Para mas detalles sobre como solicitar una beca de trabajo, visita nuestra pagina web de becas o comunicate con la oficina de ayuda financiera.",
+        "El servicio de beca trabajo ya no estan disponible, tienes que esperar para el siguiente semestre y estar pendiende del portal Divisist."
+      ]
+    },
+    {
+      "tag": "contacto",
+      "patterns": [
+        "Informacion de contacto",
+        "¿Como puedo contactar con la universidad?",
+        "Contacto universidad",
+        "Telefono de la universidad"
+      ],
+      "responses": [
+        "Puedes contactarnos al telefono (607)5776655 o enviarnos un correo electronico a ugad@ufps.edu.co. Tambien puedes visitarnos en nuestra oficina principal de lunes a viernes de 8 am a 5 pm."
+      ]
+    },
+    {
+      "tag": "ubicacion",
+      "patterns": [
+        "¿Donde esta ubicada la universidad?",
+        "Ubicacion de la universidad",
+        "Direccion de la universidad"
+      ],
+      "responses": [
+        "Nuestra universidad esta ubicada Avenida Gran. Colombia #12E-96. Barrio Colsag. Para mas detalles, visita nuestra pagina de contacto en el sitio web."
+      ]
+    },
+    {
+      "tag": "admisiones",
+      "patterns": [
+        "Proceso de admision",
+        "¿Como puedo inscribirme?",
+        "Requisitos de admision",
+        "Inscripcion universidad"
+      ],
+      "responses": [
+        "Para inscribirte, necesitas completar el formulario de admision disponible en nuestro sitio web, enviar tus transcripciones academicas y cumplir con los requisitos especificos de tu programa de interes. Visita nuestra pagina de admisiones para mas detalles y seguir el proceso de manera correcta."
+      ]
+    },
+    {
+      "tag": "cursos",
+      "patterns": [
+        "¿Que cursos ofrecen?",
+        "Programas academicos",
+        "Carreras disponibles",
+        "Oferta academica"
+      ],
+      "responses": [
+        "Ofrecemos una variedad de programas academicos en areas como ingenieria, ciencias, humanidades, negocios, y mas. En muchas de estas ofrecemos con una acreditacion de alta calidad. Visita nuestra pagina de programas academicos para ver la lista completa de cursos y carreras disponibles."
+      ]
+    },
+    {
+      "tag": "creador",
+      "patterns": [
+        "quien fue que te creo",
+        "es tu creador",
+        "te hizo",
+        "te creo",
+        "quien te ha creado",
+        "cual es tu creador",
+        "quiero saber quien te hizo",
+        "sabes quien te creo"
+      ],
+      "responses": [
+        "Los estudiantes de Ingenieria de sistemas de 7mo semestre."
+      ]
+    },
+    {
+      "tag": "amigos_academicos",
+      "patterns": [
+        "¿Quienes son los amigos academicos?",
+        "¿Cual es el horario de los amigos academicos",
+        "¿Con que materias me pueden ayudar los amigos academicos?"
+      ],
+      "responses": [
+        "Los amigos academicos son: Luis Carreno, Julian Quiroz, Kevin Tarazona, Andersson Cardenas, Henry Blanco",
+        "El horario de los amigos academicos son los Lunes a Viernes de 2 pm a 6 pm",
+        "Los amigos academicos te pueden ayudar con cualquier materia que presentes dificultad, tales como: Programacion, Calculo, Fisica, Matematicas Discretas, etc... Animate a visitarlos"
+      ]
+    },
+    {
+      "tag": "materias",
+      "patterns": [
+        "¿Cuales son las materias del primer semestre?",
+        "Materias del semestre",
+        "Asignaturas disponibles"
+      ],
+      "responses": [
+        "Las materias del primer semestre varian segun tu semestre de estudio. Puedes consultar las materias ofrecidas en el semestre portal de Divisist para obtener una lista detallada de asignaturas que tendras que cursas en tu semestre academico."
+      ]
+    },
+    {
+      "tag": "creditos_carrera",
+      "patterns": [
+        "¿Cuantos creditos necesito para graduarme?",
+        "Creditos necesarios para graduarse",
+        "Requisitos de creditos"
+      ],
+      "responses": [
+        "El numero de creditos necesarios para graduarse es de 164, ya que es el numero total de creditos de la carrera Ingenieria de Sistemas."
+      ]
+    },
+    {
+      "tag": "capsulas_aprendizaje",
+      "patterns": [
+        "¿Que son las capsulas de aprendizaje?",
+        "Capsulas de aprendizaje",
+        "Informacion sobre capsulas de aprendizaje"
+      ],
+      "responses": [
+        "Las capsulas de aprendizaje son recursos educativos breves que realizan los amigos academicos disenados para ayudarte a comprender mejor los conceptos clave de tus cursos.",
+        "La capsulas de aprendizaje son temas principalmente de programacion.",
+        "La proxima capsula de aprendizaje es acerca de recursividad y sera dictada por Luis Carreno y Julian Quiroz."
+      ]
+    },
+    {
+      "tag": "semilleros",
+      "patterns": [
+        "¿Que son los semilleros?",
+        "Informacion sobre semilleros",
+        "Participar en semilleros"
+      ],
+      "responses": [
+        "Los semilleros son grupos de investigacion donde los estudiantes pueden participar en proyectos academicos y cientificos.",
+        "En Ingeniera de sistemas los semilleros que existen son: Silux, SiaWeb, Viral, "
+      ]
+    },
+    {
+      "tag": "horario_semilleros",
+      "patterns": [
+        "Horarios de los semilleros",
+        "¿Cuando se reunen los semilleros?",
+        "Calendario de semilleros"
+      ],
+      "responses": [
+        "Los horarios de los semilleros varian segun el grupo y el proyecto. Puedes encontrar el calendario especifico en la pagina de cada semillero en el portal de investigacion."
+      ]
+    },
+    {
+      "tag": "prestacion_salas",
+      "patterns": [
+        "¿Como puedo reservar una sala de estudio?",
+        "Reserva de salas de estudio",
+        "Prestamo de salas"
+      ],
+      "responses": [
+        "Para reservar una sala de estudio, puedes dirigirte a la directora del programa o jefe del departamento."
+      ]
+    },
+    {
+      "tag": "cantidad_profesores",
+      "patterns": [
+        "¿Cuantos profesores hay en la universidad?",
+        "Numero de profesores",
+        "Personal docente"
+      ],
+      "responses": [
+        "En el programa cuenta con mas de 30 profesores en diversas disciplinas, todos altamente calificados y dedicados a la excelencia academica."
+      ]
+    },
+    {
+      "tag": "requisitos_grado",
+      "patterns": [
+        "¿Cuales son los requisitos para graduarme?",
+        "¿Que necesito hacer para graduarme?",
+        "¿Cuantas cosas tengo que hacer para gruadarme?",
+        "¿Me puedo graduar realizando cursos de profundizacion?",
+        "Es necesario la tesis para graduarme?",
+        "¿Necesito realizar el examen de ingles para graduarme?"
+      ],
+      "responses": [
+        "Los requisitos de grado que debes realizar, es terminar todo los creditos del pensum (164). Ademas de realizar 3 materias eletivas socio-humanisticas y 6 electivas materias profesionales. Tambien debes realizar 2 cursos de profundizacion y realizar un proyecto de investigacion de pregrado o un curso de profundizacion",
+        "Puedes graduarte realizando un curso de profundizacion o con tesis. Como mejor te parezca. Debes tener en cuenta que deber terminar todas tus materias para la presentación del examen de profundización o la sustentación de la tesis.",
+        "Es obligatorio realizar la tesis o curso de profundizacion para graduarte.",
+        "El examen de ingles es obligatorio para graduarte, este examen lo puedes realizar desde 1er semestre."
+      ]
+    }
+  ]
+}
