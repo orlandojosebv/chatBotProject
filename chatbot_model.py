@@ -117,30 +117,37 @@ model = tflearn.DNN(net)
 if os.path.isfile(dir_path + "/Entrenamiento/model.tflearn.index"):
     model.load(dir_path + "/Entrenamiento/model.tflearn")
 else:
-    model.fit(training, exit, validation_set=0.1, show_metric=True, batch_size=128, n_epoch=1000)
+    model.fit(training, exit, validation_set=0.1, show_metric=True, batch_size=64, n_epoch=2500)
     model.save("Entrenamiento/model.tflearn")
 
 # Parte 4
-def get_chatbot_response(text):
+def get_chatbot_response(texto):
     bucket = [0 for _ in range(len(all_words))]
-    processed_sentence = nltk.word_tokenize(text)
-    processed_sentence = [stemmer.stem(word.lower()) for word in processed_sentence]
+    processed_sentence = nltk.word_tokenize(texto)
+    processed_sentence = [stemmer.stem(palabra.lower()) for palabra in processed_sentence]
     
-    for word in processed_sentence:
-        for i, w in enumerate(all_words):
-            if w == word:
+    for individual_word in processed_sentence:
+        for i, palabra in enumerate(all_words):
+            if palabra == individual_word:
                 bucket[i] = 1
     
     results = model.predict([numpy.array(bucket)])
     index_results = numpy.argmax(results)
-    tag = tags[index_results]
+    max_prob = results[0][index_results]
     
-    for tagAux in database["intents"]:
-        if tagAux['tag'] == tag:
-            responses = tagAux['responses']
-            return random.choice(responses)
+    target = tags[index_results]
+    print("Probabilidad máxima: {max_prob}, Tag objetivo: {target}")
     
-    return "Lo siento, no entendí eso. ¿Puedes reformular la pregunta?"
+    # Respuesta predeterminada
+    answer = "Lo siento, no entendí eso. ¿Puedes reformular la pregunta?"
+
+    if max_prob > 0.7:  # Umbral de confianza
+        for tagAux in database["intents"]:
+            if tagAux['tag'] == target:
+                answer = random.choice(tagAux['responses'])
+                break
+    
+    return answer
 
 if __name__ == "__main__":
     print("Habla Conmigo!!")
