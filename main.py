@@ -1,7 +1,6 @@
 from flask import Flask, render_template, request, jsonify
 import chatbot_model
 
-
 app = Flask(__name__)
 
 @app.route('/')

@@ -1,18 +1,29 @@
 function sendMessage() {
-    const userInput = document.getElementById('user-input').value;
-    if (userInput) {
-        const chatBox = document.getElementById('chat-box');
-        const userMessage = document.createElement('div');
-        userMessage.textContent = "You: " + userInput;
-        chatBox.appendChild(userMessage);
+    const userInput = document.getElementById('user-input');
+    const userText = userInput.value.trim();
+    if (userText === "") return;
 
-        fetch(`/get_response?user_input=${encodeURIComponent(userInput)}`)
+    appendMessage('user', userText);
+    userInput.value = "";
+
+    fetch(`/get_response?user_input=${userText}`)
         .then(response => response.json())
         .then(data => {
-            const botMessage = document.createElement('div');
-            botMessage.textContent = "Bot: " + data.response;
-            chatBox.appendChild(botMessage);
-            document.getElementById('user-input').value = '';
+            appendMessage('bot', data.response);
+        })
+        .catch(error => {
+            console.error('Error:', error);
         });
-    }
+}
+
+function appendMessage(sender, text) {
+    const chatBox = document.getElementById('chat-box');
+    const messageDiv = document.createElement('div');
+    messageDiv.classList.add('message', sender);
+    const messageTextDiv = document.createElement('div');
+    messageTextDiv.classList.add('text');
+    messageTextDiv.textContent = text;
+    messageDiv.appendChild(messageTextDiv);
+    chatBox.appendChild(messageDiv);
+    chatBox.scrollTop = chatBox.scrollHeight;
 }

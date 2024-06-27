@@ -121,37 +121,34 @@ else:
     model.save("Entrenamiento/model.tflearn")
 
 # Parte 4
-def response(texto):
-    if texto.lower() == "duerme":
-        print("HA DISO UN GUSTO, VUELVE PRONTO AMIGO!")
-        return False
-    else:
-        bucket = [0 for _ in range(len(all_words))]
-        processed_sentence = nltk.word_tokenize(texto)
-        processed_sentence = [stemmer.stem(palabra.lower()) for palabra in processed_sentence]
-        for individual_word in processed_sentence:
-            for i, palabra in enumerate(all_words):
-                if palabra == individual_word:
-                    bucket[i] = 1
-        results = model.predict([numpy.array(bucket)])
-        index_results = numpy.argmax(results)  # Guarda el índice, del que tiene más probabilidad
-        max_prob = results[0][index_results]
+def get_chatbot_response(text):
+    bucket = [0 for _ in range(len(all_words))]
+    processed_sentence = nltk.word_tokenize(text)
+    processed_sentence = [stemmer.stem(word.lower()) for word in processed_sentence]
+    
+    for word in processed_sentence:
+        for i, w in enumerate(all_words):
+            if w == word:
+                bucket[i] = 1
+    
+    results = model.predict([numpy.array(bucket)])
+    index_results = numpy.argmax(results)
+    tag = tags[index_results]
+    
+    for tagAux in database["intents"]:
+        if tagAux['tag'] == tag:
+            responses = tagAux['responses']
+            return random.choice(responses)
+    
+    return "Lo siento, no entendí eso. ¿Puedes reformular la pregunta?"
 
-        target = tags[index_results]
-
-        # Respuesta predeterminada
-        answer = "Lo siento, no entendí eso. ¿Puedes reformular la pregunta?"
-
-        for tagAux in database["intents"]:  # Obtengo todos los objetos
-            if tagAux['tag'] == target:
-                answer = random.choice(tagAux['responses'])
-                break
-
-        print(answer)
-        return True
-
-print("Habla Conmigo!!")
-bool = True
-while bool:
-    texto = input()
-    bool = response(texto)
+if __name__ == "__main__":
+    print("Habla Conmigo!!")
+    while True:
+        texto = input()
+        if texto.lower() == "duerme":
+            print("HA DISO UN GUSTO, VUELVE PRONTO AMIGO!")
+            break
+        else:
+            response = get_chatbot_response(texto)
+            print(response)

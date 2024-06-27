@@ -11,7 +11,7 @@
         "Hey"
       ],
       "responses": [
-        "¡Hola! ¿En que puedo ayudarte hoy?",
+        "Hola!¿En que puedo ayudarte hoy?",
         "¡Hola! ¿Como puedo asistirte?",
         "¡Hola! ¿Que necesitas saber?"
       ]
@@ -175,7 +175,8 @@
       ],
       "responses": [
         "Los semilleros son grupos de investigacion donde los estudiantes pueden participar en proyectos academicos y cientificos.",
-        "En Ingeniera de sistemas los semilleros que existen son: Silux, SiaWeb, Viral, "
+        "En Ingeniera de sistemas los semilleros que existen son: Silux (Linux y desarrollo de software Libre), SiaWeb, Inteligencia artificial SIA, redes y seguridad (SIREDSE), Videojuegos, Mineria de datos. ",
+        "Para participar en un semillero tienes que consultar a los horarios de estos, que son actualizados cada semestre."
       ]
     },
     {
