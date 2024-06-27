@@ -117,7 +117,7 @@ model = tflearn.DNN(net)
 if os.path.isfile(dir_path + "/Entrenamiento/model.tflearn.index"):
     model.load(dir_path + "/Entrenamiento/model.tflearn")
 else:
-    model.fit(training, exit, validation_set=0.1, show_metric=True, batch_size=64, n_epoch=2500)
+    model.fit(training, exit, validation_set=0.1, show_metric=True, batch_size=64, n_epoch=2000)
     model.save("Entrenamiento/model.tflearn")
 
 # Parte 4
@@ -136,12 +136,12 @@ def get_chatbot_response(texto):
     max_prob = results[0][index_results]
     
     target = tags[index_results]
-    print("Probabilidad máxima: {max_prob}, Tag objetivo: {target}")
+    print("Probabilidad máxima: " + str(max_prob) + ", Tag objetivo: " + target)
     
     # Respuesta predeterminada
     answer = "Lo siento, no entendí eso. ¿Puedes reformular la pregunta?"
 
-    if max_prob > 0.7:  # Umbral de confianza
+    if max_prob > 0.6:  # Umbral de confianza
         for tagAux in database["intents"]:
             if tagAux['tag'] == target:
                 answer = random.choice(tagAux['responses'])
